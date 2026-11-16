@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#0a2a1a"/>
+      <stop offset="60%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#030303"/>
+    </radialGradient>
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff88"/>
+      <stop offset="100%" stop-color="#00cc66"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background with rounded corners -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
+
+  <!-- Outer decorative ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.1"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#00ff88" stroke-width="1.5" opacity="0.08" stroke-dasharray="8 12"/>
+
+  <!-- Outer ring accent segments -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#neonGrad)" stroke-width="6" stroke-dasharray="60 1200" stroke-dashoffset="0" filter="url(#glow)" opacity="0.6"/>
+
+  <!-- Shield shape -->
+  <path d="M 256 120 L 360 160 L 360 280 Q 360 360 256 400 Q 152 360 152 280 L 152 160 Z"
+        fill="none" stroke="url(#neonGrad)" stroke-width="8" filter="url(#glow)"/>
+
+  <!-- Inner shield fill -->
+  <path d="M 256 138 L 342 172 L 342 278 Q 342 346 256 382 Q 170 346 170 278 L 170 172 Z"
+        fill="#00ff88" opacity="0.06"/>
+
+  <!-- Lightning bolt / Zap icon centered -->
+  <path d="M 276 180 L 210 270 L 250 270 L 234 340 L 300 248 L 260 248 L 276 180 Z"
+        fill="url(#neonGrad)" filter="url(#glow2)"/>
+
+  <!-- Small accent dots -->
+  <circle cx="160" cy="160" r="4" fill="#00ff88" opacity="0.5" filter="url(#glow2)"/>
+  <circle cx="352" cy="160" r="4" fill="#00ff88" opacity="0.5" filter="url(#glow2)"/>
+  <circle cx="160" cy="352" r="4" fill="#00ff88" opacity="0.5" filter="url(#glow2)"/>
+  <circle cx="352" cy="352" r="4" fill="#00ff88" opacity="0.5" filter="url(#glow2)"/>
+</svg>
